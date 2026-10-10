@@ -1,0 +1,44 @@
+{
+  "name": "my-desktop-app",
+  "version": "1.0.0",
+  "description": "Desktop application built from HTML/CSS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.myapp.desktop",
+    "productName": "My Desktop App",
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "icon.ico",
+      "assets/**/*",
+      "css/**/*",
+      "js/**/*",
+      "images/**/*",
+      "fonts/**/*"
+    ]
+  }
+}
